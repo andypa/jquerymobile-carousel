@@ -1,0 +1,13 @@
+.carousel_holder {
+    overflow: hidden;
+    width: 100%;
+}
+.carousel {
+    padding: 0;
+    overflow: hidden; 
+}
+
+.carousel li {
+    list-style: none;
+    float: left;    
+}
