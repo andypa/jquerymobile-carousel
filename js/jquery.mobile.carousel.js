@@ -47,16 +47,7 @@
                 if(currentIndex == 0 && !settings.endless) {
                     return false;
                 }
-                
-                /*
-                var translate = currentIndex-1 * width;
-                if(currentIndex == 0 && settings.endless) { // First one & endless --> jump to last
-                    translate = -((count-1)*width);
-                }
-                if(currentIndex+1 == count) { // Last one
-                    translate = currentIndex-1 * width;
-                } 
-                */            
+               
                 if($(el).css('-moz-transform') || $(el).css('-webkit-transform') || $(el).css('-o-transform') || $(el).css('transform')) {
                     $(el).css('-webkit-transform', 'translate('+translate+'px,0)');    
                 } else {

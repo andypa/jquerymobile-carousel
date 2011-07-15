@@ -1,0 +1,22 @@
+Create following markup:
+
+<ul id="carousel">
+    <li><img src="http://lorempixum.com/500/500/nature/1" width="100%"></li>
+    <li><img src="http://lorempixum.com/500/500/nature/2" width="100%"></li>
+    <li><img src="http://lorempixum.com/500/500/nature/3" width="100%"></li>
+    <li><img src="http://lorempixum.com/500/500/nature/4" width="100%"></li>
+</ul>
+
+To initiate the image carousel, add following script:
+
+$(document).ready(function() {
+    $('#carousel').carousel({endless: true});
+});
+
+The options currently are:
+
+endless: true/false (default: true)
+
+If endless is set to true, following functionality is activated:
+- If you are on the first image and swiperight, you jump to the last image
+- If you are on the last image and swipeleft, you jump to the first image
