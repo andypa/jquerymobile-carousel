@@ -34,6 +34,9 @@
                 }
                 if($(el).css('-moz-transform') || $(el).css('-webkit-transform') || $(el).css('-o-transform') || $(el).css('transform')) {
                     $(el).css('-webkit-transform', 'translate(-'+translate+'px,0)');    
+                    $(el).css('-moz-transform', 'translate(-'+translate+'px,0)');    
+                    $(el).css('-o-transform', 'translate(-'+translate+'px,0)');    
+                    $(el).css('transform', 'translate(-'+translate+'px,0)');    
                 } else {
                     $(el).animate({marginLeft: -translate});    
                 }
@@ -50,6 +53,10 @@
                
                 if($(el).css('-moz-transform') || $(el).css('-webkit-transform') || $(el).css('-o-transform') || $(el).css('transform')) {
                     $(el).css('-webkit-transform', 'translate('+translate+'px,0)');    
+                    $(el).css('-moz-transform', 'translate('+translate+'px,0)');    
+                    $(el).css('-o-transform', 'translate('+translate+'px,0)');    
+                    $(el).css('-webkit-transform', 'translate('+translate+'px,0)');    
+                    $(el).css('transform', 'translate('+translate+'px,0)');    
                 } else {
                     $(el).animate({marginLeft: translate});    
                 }
