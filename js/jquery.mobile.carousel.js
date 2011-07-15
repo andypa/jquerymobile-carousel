@@ -15,12 +15,12 @@
             $this.find('img').width($(window).width());
             var width=$(window).width();
             //$this.height($this.find('li:first img').height());
-            $this.find('img').live('swipeleft', function(event, ui){
+            $this.find('img').live('click', function(event, ui){
                 var currentIndex = $this.find('li').index($(this).parent('li'));
                 var count = $this.find('li').length;
                 loadNext($this, currentIndex, count, width);                
             });  
-            $this.find('img').live('swiperight', function(event, ui){
+            $this.find('img').live('dblclick', function(event, ui){
                 var currentIndex = $this.find('li').index($(this).parent('li'));
                 var count = $this.find('li').length;
                 loadPrevious($this, currentIndex, count, width);                
@@ -42,13 +42,28 @@
                 }
             }
             function loadPrevious(el, currentIndex, count, width) {
+                var translate = 0;
+                if(currentIndex == 0 && settings.endless) { // First one & endless --> jump to last
+                    translate = -((count-1)*width);
+                }
+                if(currentIndex+1 == count) { // Last one
+                    translate = currentIndex-1 * width;
+                    console.log(translate);
+                }
+                
+                //var translate = (currentIndex-1)
+                
+                /*
                 var translate = (currentIndex-1)*width;
                 if(currentIndex-1 < 0 && settings.endless) { // First one & endless
                     translate = 0;
                 }
-                if(currentIndex-1 < 0 && !settings.endless) {
+                
+                /*
+                if(currentIndex-1 <= 0 && !settings.endless) {
                     return false;
                 }
+                */
                 if($(el).css('-moz-transform') || $(el).css('-webkit-transform') || $(el).css('-o-transform') || $(el).css('transform')) {
                     $(el).css('-webkit-transform', 'translate('+translate+'px,0)');    
                 } else {
