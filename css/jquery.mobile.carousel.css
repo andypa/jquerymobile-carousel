@@ -5,6 +5,7 @@
 .carousel {
     padding: 0;
     overflow: hidden; 
+    -webkit-transition: all 1.0s ease-in-out;
 }
 
 .carousel li {
