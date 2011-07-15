@@ -46,10 +46,12 @@
             
             function loadNext(el, currentIndex, count, width) {
                 var translate = (currentIndex+1)*width;
-                if(currentIndex+1 == count) {
+                if(currentIndex+1 == count && settings.endless) { // Last one & endless
                     translate = 0;
+                } else {
+                    //translate = currentIndex*width;
                 }
-                console.log($(el).css('-webkit-transform'));
+                //console.log($(el).css('-webkit-transform'));
                 $(el).css('-webkit-transform', 'translate(-'+translate+'px,0)');
             }
             /*
