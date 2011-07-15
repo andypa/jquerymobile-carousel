@@ -15,44 +15,25 @@
             $this.find('img').width($(window).width());
             var width=$(window).width();
             //$this.height($this.find('li:first img').height());
-            $this.find('img').live('click', function(event, ui){
+            $this.find('img').live('swipeleft', function(event, ui){
                 var currentIndex = $this.find('li').index($(this).parent('li'));
                 var count = $this.find('li').length;
-                loadNext($this, currentIndex, count, width);
-                /*
-                if($this.find('li').length > 1) {
-                    if(settings.endless) { // endless
-
-                        if(nextIndex == count) { // last element
-                            $this.animate({
-                                marginLeft: '0'
-                            });   
-
-                        } else {
-                            $this.animate({
-                                marginLeft: '-='+width
-                            });   
-
-                        }
-                    } else {
-                        if(nextIndex < count) { // last element
-                            $this.animate({
-                                marginLeft: '-='+width
-                            });   
-                        }
-                    }    
-                }*/
+                loadNext($this, currentIndex, count, width);                
             });  
             
             function loadNext(el, currentIndex, count, width) {
                 var translate = (currentIndex+1)*width;
                 if(currentIndex+1 == count && settings.endless) { // Last one & endless
                     translate = 0;
-                } else {
-                    //translate = currentIndex*width;
                 }
-                //console.log($(el).css('-webkit-transform'));
-                $(el).css('-webkit-transform', 'translate(-'+translate+'px,0)');
+                if(currentIndex+1 == count && !settings.endless) {
+                    return false;
+                }
+                if($(el).css('-moz-transform') || $(el).css('-webkit-transform') || $(el).css('-o-transform') || $(el).css('transform')) {
+                    $(el).css('-webkit-transform', 'translate(-'+translate+'px,0)');    
+                } else {
+                    $(el).animate({marginLeft: -translate});    
+                }
             }
             /*
             $this.find('img').live('swiperight', function(event, ui){
