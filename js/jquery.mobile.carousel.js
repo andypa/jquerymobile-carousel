@@ -15,12 +15,12 @@
             $this.find('img').width($(window).width());
             var width=$(window).width();
             //$this.height($this.find('li:first img').height());
-            $this.find('img').live('click', function(event, ui){
+            $this.find('img').live('swipeleft', function(event, ui){
                 var currentIndex = $this.find('li').index($(this).parent('li'));
                 var count = $this.find('li').length;
                 loadNext($this, currentIndex, count, width);                
             });  
-            $this.find('img').live('dblclick', function(event, ui){
+            $this.find('img').live('swiperight', function(event, ui){
                 var currentIndex = $this.find('li').index($(this).parent('li'));
                 var count = $this.find('li').length;
                 loadPrevious($this, currentIndex, count, width);                
