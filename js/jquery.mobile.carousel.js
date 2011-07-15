@@ -48,22 +48,7 @@
                 }
                 if(currentIndex+1 == count) { // Last one
                     translate = currentIndex-1 * width;
-                    console.log(translate);
-                }
-                
-                //var translate = (currentIndex-1)
-                
-                /*
-                var translate = (currentIndex-1)*width;
-                if(currentIndex-1 < 0 && settings.endless) { // First one & endless
-                    translate = 0;
-                }
-                
-                /*
-                if(currentIndex-1 <= 0 && !settings.endless) {
-                    return false;
-                }
-                */
+                }             
                 if($(el).css('-moz-transform') || $(el).css('-webkit-transform') || $(el).css('-o-transform') || $(el).css('transform')) {
                     $(el).css('-webkit-transform', 'translate('+translate+'px,0)');    
                 } else {
