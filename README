@@ -1,4 +1,9 @@
-Create following markup:
+Requirements:
+- jQuery Mobile 1.0b1
+- jQuery 1.6.1
+
+
+Usage:
 
 <ul id="carousel">
     <li><img src="http://lorempixum.com/500/500/nature/1" width="100%"></li>
