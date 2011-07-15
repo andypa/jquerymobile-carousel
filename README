@@ -6,10 +6,10 @@ Requirements:
 Usage:
 
 <ul id="carousel">
-    <li><img src="http://lorempixum.com/500/500/nature/1" width="100%"></li>
-    <li><img src="http://lorempixum.com/500/500/nature/2" width="100%"></li>
-    <li><img src="http://lorempixum.com/500/500/nature/3" width="100%"></li>
-    <li><img src="http://lorempixum.com/500/500/nature/4" width="100%"></li>
+    <li><img src='http://lorempixum.com/500/500/nature/1' width="100%"></li>
+    <li><img src='http://lorempixum.com/500/500/nature/2' width="100%"></li>
+    <li><img src='http://lorempixum.com/500/500/nature/3' width="100%"></li>
+    <li><img src='http://lorempixum.com/500/500/nature/4' width="100%"></li>
 </ul>
 
 To initiate the image carousel, add following script:
